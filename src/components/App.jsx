@@ -28,8 +28,8 @@ function App() {
 		)};
 	// sort hogs based on name and weight
 	return (
-		<div className="App">
-			<Nav hogs={hogs} displayDetails={displayDetails}/>
+		<div class="App">
+			<Nav hogs={hogs} displayDetails={displayDetails} onClickedTile={setClickedTile}/>
 		</div>
 	);
 };
