@@ -24,11 +24,11 @@ export default function HogForm({hogs}) {
                 <label htmlFor="Name:">Name:</label>
                 <input type="text" id="Name:"></input>
                 <label htmlFor="Weight:">Weight:</label>
-                <input type="text" id="Weight:"></input>
+                <input type="number" id="Weight:"></input>
                 <label htmlFor="Specialty:">Specialty:</label>
                 <input type="text" id="Specialty:"></input>
                 <label htmlFor="Greased?">Greased?</label>
-                <input type="text" id="Greased?"></input>
+                <input type="checkbox" id="Greased?"></input>
                 <button className="ui button" type="submit">Add Hog</button>
             </form>
         </div>
