@@ -26,7 +26,7 @@ export default function Filter({onChangeShowGreased, onChangeSortBy, filteredHog
                 </select>
             </div>
             <div className="ui item">
-                <label htmlFor="filter-greased">Greased Pigs Only</label>
+                <label htmlFor="filter-greased">Greased Pigs Only?</label>
                 <input id="filter-greased" type="checkbox" className="ui toggle checkbox" onChange={handleFilterHogs}></input>
             </div>
         </div>
