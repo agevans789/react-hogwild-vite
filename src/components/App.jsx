@@ -36,7 +36,7 @@ function App() {
 				<Filter onChangeShowGreased={handleShowGreased} hogs={hogs} onChangeSortBy={handleSortBy}/>
 			</div>
 			<div className="sixteen wide column centered">
-				<HogForm/>
+				<HogForm hogs={hogs}/>
 			</div>
 			<div className="sixteen wide column centered">
 				<HogList hogs={hogs} filteredHogs={filteredHogs} sortedHogs={sortedHogs} alphabeticalHogs={alphabeticalHogs}/>
