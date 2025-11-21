@@ -19,7 +19,7 @@ export default function HogForm({hogs}) {
         handleAdd(newHog);
     };
     return (
-        <div className="">
+        <div className="New Hog Form">
             <form className="ui form" onSubmit={handleSubmit}>
                 <label htmlFor="Name:">Name:</label>
                 <input type="text" id="Name:"></input>
