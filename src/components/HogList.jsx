@@ -2,11 +2,11 @@ import React from "react";
 import { useState } from "react";
 import HogTile from "./HogTile";
 
-export default function HogList({filteredHogs, sortedHogs, alphabeticalHogs, hogs}) {
+export default function HogList({filteredHogs, sortedHogs, alphabeticalHogs, hogs, onShowDetails}) {
     if (!hogs){
         return <div>Loading hogs...</div>
     } const cards = hogs.map((hog) => {
-        return <HogTile hog={hog} key={hog.name}/>
+        return <HogTile hog={hog} key={hog.name} onShowDetails={onShowDetails}/>
     });
     return (
         <div className="ui three stackable">

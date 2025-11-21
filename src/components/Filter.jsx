@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 export default function Filter({onChangeShowGreased, onChangeSortBy, filteredHogs, hogs}) {
-    const [filterHogs, setFilterHogs] = useState(filteredHogs);
+
 	const handleFilterHogs = (e) => {
         if (onChangeShowGreased) {
             onChangeShowGreased(e.target.checked);
