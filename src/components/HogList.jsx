@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import HogTile from "./HogTile";
 
-export default function HogList({hogs}) {
+export default function HogList({filteredHogs, sortedHogs, alphabeticalHogs, hogs}) {
     if (!hogs){
         return <div>Loading hogs...</div>
     } const cards = hogs.map((hog) => {

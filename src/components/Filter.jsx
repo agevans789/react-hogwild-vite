@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Filter({onChangeShowGreased, filteredHogs, hogs}) {
+export default function Filter({onChangeShowGreased, onChangeSortBy, filteredHogs, hogs}) {
     const [filterHogs, setFilterHogs] = useState(filteredHogs);
 	const handleFilterHogs = (e) => {
         if (onChangeShowGreased) {
@@ -10,11 +10,17 @@ export default function Filter({onChangeShowGreased, filteredHogs, hogs}) {
 		setFilterHogs((filterHogs) => 
 			filterHogs === hogs ? filteredHogs : hogs
 		);};
+
+    const handleChangeSort = (e) => {
+        if (onChangeSortBy) {
+            onChangeSortBy(e.target.value);
+        };
+    };
     return (
         <div className="ui menu">
             <div className="ui item">
                 <label htmlFor="sortFilter">Sort by:</label>
-                <select id="sortFilter" className="ui selection dropdown">
+                <select id="sortFilter" className="ui selection dropdown" onChange={handleChangeSort}>
                     <option value="name">Name</option>
                     <option value="weight">Weight</option>
                 </select>
