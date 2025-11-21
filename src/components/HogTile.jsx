@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import hogs from "../porkers_data";
-import {useState} from 'react';
-import {Card, Image, Button, Content, Description, Header} from 'semantic-ui-react';
 
 const HogTile = ({hog, onShowDetails, onClickedTile}) => {
+    const [showDetails, setShowDetails] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+
+    const handleClick = () => {
+        setShowDetails((previousState) => !previousState);
+    };   
+
+    if (isHidden) {
+        return null;
+    };
+
     return (
-        <div class="ui card" aria-label='hog card'>
-            <Card onClick={() => onClickedTile(hog)}>
-                <Image src={hog.image} wrapped ui={false} alt={hog.name} />
-                <Card.Content>
-                    <Card.Header>{hog.name}</Card.Header>
-                {onShowDetails &&
-                    <Card.Description>    
-                        <p><strong>Specialty:</strong> {hog.specialty}</p>
-                        <p><strong>Greased:</strong> {hog.greased === true ? "Yes" : "No"}</p>
-                        <p><strong>Weight:</strong> {hog.weight}</p>
-                        <p><strong>Highest Medal Achieved:</strong> {hog["highest medal achieved"]}</p>
-                    </Card.Description>
-                }
-                </Card.Content>
-            </Card>
+        <div aria-label="hog card" className="ui card eight wide column" onClick={handleClick}>
+            <div className="card">
+                <div className="image">
+                    <img src={hog.image} alt={hog.name}/>
+                </div>
+                <div className="content">
+                    <h3 className='header'>{hog.name}</h3>
+                    <div className="description">{hog.specialty}</div>
+                    {showDetails ? <div className='extra content'>
+                        <strong>{hog.greased ? "Greased" : "Nongreased"}</strong>
+                        <p>Highest Medal Achieved:<strong> {hog["highest medal achieved"]}</strong></p>
+                        <p>Weight:<strong> {hog.weight}</strong></p>
+                    </div> : null}
+                    <button className="ui button" onClick={(e) => setIsHidden((previous) => !previous)}>Hide Me</button>
+                </div>
+            </div>
         </div>
     )
 };
+  
 
-export default HogTile
+export default HogTile;

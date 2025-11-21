@@ -2,8 +2,9 @@ import React from "react";
 import piggy from "../assets/porco.png";
 import {useState} from 'react';
 import HogTile from './HogTile';
-import {hogs} from '../porkers_data';
+import hogs from '../porkers_data';
 import {Button} from 'semantic-ui-react';
+import HogList from "./HogList";
 
 const Nav = ({hogs, displayDetails, onClickedTile, handleFilterHogs}) => {
 	// map over all hogs to render individual HogTile component
@@ -18,12 +19,8 @@ const Nav = ({hogs, displayDetails, onClickedTile, handleFilterHogs}) => {
 				A React App for County Fair Hog Fans
 			</span>
 			<div className="hog-display">
-				<div className="hog-tiles">
-					{hogs && hogs.map(hog => (
-						<HogTile key={hog.name} hog={hog} onShowDetails={displayDetails} onClickedTile={onClickedTile}/>
-					))}
-				</div>
-				<Button onClick={handleFilterHogs}>Filter</Button>
+				<HogList />
+				<button class="ui button" onClick={handleFilterHogs}>Filter</button>
 			</div>
 		</div>
 	);
