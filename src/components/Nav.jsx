@@ -6,7 +6,7 @@ import hogs from '../porkers_data';
 import {Button} from 'semantic-ui-react';
 import HogList from "./HogList";
 
-const Nav = ({hogs, displayDetails, onClickedTile, handleFilterHogs}) => {
+const Nav = () => {
 	// map over all hogs to render individual HogTile component
 	// identifier key is the name, the object to be passed to the child component is from the hogs array, prop that indicates that the tile was clicked is isClicked 
 	return (
@@ -20,7 +20,6 @@ const Nav = ({hogs, displayDetails, onClickedTile, handleFilterHogs}) => {
 			</span>
 			<div className="hog-display">
 				<HogList />
-				<button class="ui button" onClick={handleFilterHogs}>Filter</button>
 			</div>
 		</div>
 	);

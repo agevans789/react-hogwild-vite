@@ -17,11 +17,11 @@ const HogTile = ({hog, onShowDetails, onClickedTile}) => {
         <div aria-label="hog card" className="ui card eight wide column" onClick={handleClick}>
             <div className="card">
                 <div className="image">
-                    <img src={hog.image} alt={hog.name} width={250} height={200}/>
+                    <img src={hog.image} alt={`Photo of ${hog.name}`} width={250} height={200}/>
                 </div>
                 <div className="content">
                     <h3 className='header'>{hog.name}</h3>
-                    <div className="description">{hog.specialty}</div>
+                    <div className="description">Specialty: {hog.specialty}</div>
                     {showDetails ? <div className='extra content'>
                         <strong>{hog.greased ? "Greased" : "Nongreased"}</strong>
                         <p>Highest Medal Achieved:<strong> {hog["highest medal achieved"]}</strong></p>
